@@ -1,5 +1,56 @@
+# config/routes.yaml
+
+# Import routes from controllers
 controllers:
     resource:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+# Define routes
+app_movies:
+    path: /movies
+    controller: App\Controller\MovieController::index
+
+top5movies:
+    path: /api/top5movies
+    controller: App\Controller\TopRatedController::getTopRatedMovies
+
+top5series:
+    path: /api/top5series
+    controller: App\Controller\TopRatedController::getTopRatedTvShows
+
+movies:
+    path: /api/movies/{page}
+    controller: App\Controller\MovieController::index
+    methods: GET
+    requirements:
+        page: \d+
+
+tv_shows:
+    path: /api/tv-shows/{page}
+    controller: App\Controller\TvShowController::index
+    methods: GET
+    requirements:
+        page: \d+
+
+register:
+    path: /api/register
+    controller: App\Controller\UserController::register
+    methods: POST
+
+favorites:
+    path: /api/favorites
+    controller: App\Controller\UserController::addFavorite
+    methods: POST
+
+movie_search:
+    path: /api/movies
+    controller: App\Controller\MovieController::search
+    methods: GET
+
+movies_show:
+    path: /movies/{id}
+    controller: App\Controller\MovieController::show
+    requirements:
+        id: '\d+'
