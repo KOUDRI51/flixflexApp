@@ -22,15 +22,14 @@ Getting Started
  To get started with FlixFlex, follow these steps:
 
 Clone the repository to your local machine:
-bash Copy code git clone https://github.com/YOUR_USERNAME/flixflex.git Install the necessary dependencies:
-Copy code composer install
-Create a new MySQL database and update the .env file with your database credentials:
-bash Copy code DATABASE_URL=mysql://db_user:db_pass@127.0.0.1:3306/namedatabase Create the necessary database tables:
-bash Copy code php bin/console doctrine:migrations:migrate 
-Register for an API key from The Movie Database API (https://www.themoviedb.org/documentation/api) and update the .env file with your API key:
-makefile Copy code TMDB_API_KEY=your_api_key
-Start the development server:
-sql Copy code symfony server:start
+      bash Copy code git clone https://github.com/YOUR_USERNAME/flixflex.git Install the necessary dependencies:
+      Copy code composer install
+     Create a new MySQL database and update the .env file with your database credentials:
+     bash Copy code DATABASE_URL=mysql://db_user:db_pass@127.0.0.1:3306/namedatabase Create the necessary database tables:
+     bash Copy code php bin/console doctrine:migrations:migrate 
+     Register for an API key from The Movie Database API (https://www.themoviedb.org/documentation/api) and update the .env file with your API key:
+     makefile Copy code TMDB_API_KEY=your_api_key
+     Start the development server:sql Copy code symfony server:start
 
 Usage
 
